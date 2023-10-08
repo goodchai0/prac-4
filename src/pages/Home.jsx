@@ -30,7 +30,11 @@ const Home = () => {
       setExpression(newExpression);
     }
   };
-
+  const h1Style = {
+    padding: "1rem",
+    fontWeight: "bold",
+    fontSize: "3.5rem", // Adjust the font size here
+  };
   return (
     <div style={{ backgroundColor: "#3B4664", height: "100vh" }}>
       <div
@@ -56,7 +60,7 @@ const Home = () => {
             alignItems: "end",
           }}
         >
-          <h1 style={{ padding: "1rem" }}>{ans || expression.join("")}</h1>
+          <h1 style={h1Style}>{ans || expression.join("")}</h1>
         </div>
         <div
           style={{
@@ -82,10 +86,11 @@ const Home = () => {
           >
             <style jsx>{`
               button {
-                padding: 1.3rem;
+                padding: 1rem;
                 margin: 0.1rem 0.5rem 1rem 0.5rem;
                 border-radius: 0.5rem;
                 font-weight: bold;
+                font-size: 1.5rem;
               }
               .double-grid {
                 grid-column: span 2;
@@ -94,7 +99,12 @@ const Home = () => {
             <button onClick={() => handleExpression("7")}>7</button>
             <button onClick={() => handleExpression("8")}>8</button>
             <button onClick={() => handleExpression("9")}>9</button>
-            <button onClick={() => handleExpression("DEL")}>DEL</button>
+            <button
+              onClick={() => handleExpression("DEL")}
+              style={{ background: "#3B4664", color: "white" }}
+            >
+              DEL
+            </button>
 
             <button onClick={() => handleExpression("4")}>4</button>
             <button onClick={() => handleExpression("5")}>5</button>
